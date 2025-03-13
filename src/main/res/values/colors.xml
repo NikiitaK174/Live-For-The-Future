@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="pink">#fe696e</color>
+    <color name="waterBackground">#cae0ef</color>
+    <color name="waterText">#138ad3</color>
+    <color name="foodBackground">#fffcd2</color>
+    <color name="foodText">#ffbd59</color>
+    <color name="exerciseBackground">#d6ecd2</color>
+    <color name="exerciseText">#45a834</color>
+    <color name="feelingsBackground">#ffe4d8</color>
+    <color name="feelingsText">#fe696e</color>
+</resources>
