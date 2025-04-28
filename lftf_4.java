@@ -1,24 +1,48 @@
 package com.example.liveforthefuture;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
-public class lftf_3 extends AppCompatActivity {
+class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_lftf4);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+        setContentView(R.layout.activity_lftf4);  // Set the layout for the main screen
+
+        // Initialize buttons
+        Button waterLogButton = findViewById(R.id.waterLogButton);
+        Button foodLogButton = findViewById(R.id.foodLogButton);
+        Button fitnessButton = findViewById(R.id.fitnessButton);
+        Button feelingsTrackerButton = findViewById(R.id.feelingsTrackerButton);
+
+        // Set click listeners for each button
+        waterLogButton.setOnClickListener(v -> {
+            // Navigate to the Water page activity
+            Intent intent = new Intent(MainActivity.this, WaterPageActivity.class);
+            startActivity(intent);
+        });
+
+        foodLogButton.setOnClickListener(v -> {
+            // Navigate to the Food page activity
+            Intent intent = new Intent(MainActivity.this, FoodPageActivity.class);
+            startActivity(intent);
+        });
+
+        fitnessButton.setOnClickListener(v -> {
+            // Navigate to the Fitness page activity
+            Intent intent = new Intent(MainActivity.this, FitnessPageActivity.class);
+            startActivity(intent);
+        });
+
+        feelingsTrackerButton.setOnClickListener(v -> {
+            // Navigate to the Feelings Tracker page activity
+            Intent intent = new Intent(MainActivity.this, FeelingsTrackerPageActivity.class);
+            startActivity(intent);
         });
     }
 }
+
+
