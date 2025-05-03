@@ -36,6 +36,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
@@ -76,7 +77,7 @@ fun Screen1(navController: NavController) {
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp),
-        verticalArrangement = Arrangement.Bottom,
+        verticalArrangement = Arrangement.spacedBy(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally // ✅ Center content
     ) {
         // 📝 Displaying Question Cards
@@ -96,7 +97,7 @@ fun Screen1(navController: NavController) {
     }
 }
 
-// 🏁 BLANK SCREEN 2
+// 🏁 BLANK SCREEN 
 @Composable
 fun Screen2(navController: NavController) {
     Box(
@@ -294,21 +295,61 @@ fun QuestionCard(questionText: String) {
         elevation = CardDefaults.elevatedCardElevation(0.dp), // ✅ No shadows
         colors = CardDefaults.cardColors(containerColor = Color.Transparent)
     ) {
-        Box(
+        Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(Color.White)
-                .border(2.dp, Color.Black)
-                .padding(16.dp), // ✅ Inner padding
-            contentAlignment = Alignment.Center
+                .padding(16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally // ✅ Fix alignment
         ) {
-            Text(
-                text = questionText,
-                fontSize = 18.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.Black,
-                textAlign = TextAlign.Center
-            )
+            // White Background Box for the Question Text
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(Color.White)
+                    .padding(12.dp), // Add padding inside the box
+                contentAlignment = Alignment.Center
+            ) {
+                Text(
+                    text = questionText,
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Black, // ✅ Black text for contrast
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier.align(Alignment.CenterStart)
+                )
+            }
+
+            // Row for Buttons
+            Row(
+                modifier = Modifier.padding(top = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                Button(
+                    onClick = { /* Handle correct answer */ },
+                    colors = ButtonDefaults.buttonColors(Color.Green),
+                    shape = RectangleShape // ✅ Makes button square
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.check_mark),
+                        contentDescription = "Water Glasses Image",
+                        modifier = Modifier.size(25.dp)
+                    )
+                }
+
+                Button(
+                    onClick = { /* Handle incorrect answer */ },
+                    colors = ButtonDefaults.buttonColors(Color.Red),
+                    shape = RectangleShape // ✅ Makes button square
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.x_sign),
+                        contentDescription = "Water Glasses Image",
+                        modifier = Modifier.size(25.dp)
+                    )
+                }
+            }
         }
     }
 }
+
+
