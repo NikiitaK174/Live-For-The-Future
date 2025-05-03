@@ -37,7 +37,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
+import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.res.painterResource
 
 
@@ -93,7 +97,7 @@ fun Screen1(navController: NavController) {
     }
 }
 
-// 🏁 BLANK SCREEN 1
+// 🏁 BLANK SCREEN 
 @Composable
 fun Screen2(navController: NavController) {
     Box(
@@ -221,31 +225,64 @@ fun Screen2(navController: NavController) {
 
 @Composable
 fun Screen3(navController: NavController) {
+    // Create state: list of 9 booleans (all false = empty)
+    val glassStates = remember { mutableStateListOf(false, false, false, false, false, false, false, false, false) }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFFFFFFFF)) // Background color
-    )
-
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.Start,
-        verticalArrangement = Arrangement.Center
+            .background(Color.White)
+            .padding(16.dp)
     ) {
-        // Display the Image
-        Image(
-            painter = painterResource(id = R.drawable.glasses),
-            contentDescription = "Water Glasses Image",
-            modifier = Modifier.size(400.dp)
-        )
+        Column(
+            modifier = Modifier
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.SpaceEvenly,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            // Title (Optional)
+            Text(
+                text = "Drink water! Tap a glass to fill it!",
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black,
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
 
+            // 3x3 Grid using nested Rows
+            for (row in 0 until 3) {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    for (col in 0 until 3) {
+                        val index = row * 3 + col
+                        val isFull = glassStates[index]
 
+                        // Image with click toggle
+                        Image(
+                            painter = painterResource(
+                                id = if (isFull) R.drawable.full else R.drawable.empty
+                            ),
+                            contentDescription = "Glass $index",
+                            modifier = Modifier
+                                .size(90.dp)
+                                .clickable {
+                                    glassStates[index] = !isFull // toggle full/empty
+                                }
+                        )
+                    }
+                }
+            }
 
-        Button(onClick = { navController.navigate("screen0") }) {
-            Text("Go Back to Screen 0")
+            // 🔙 Back Button
+            Button(onClick = { navController.navigate("screen0") }) {
+                Text("Go Back to Screen 0")
+            }
         }
     }
 }
+
 
 
 // ✅ QUESTION CARD FUNCTION (PLACED AT THE BOTTOM)
@@ -314,4 +351,5 @@ fun QuestionCard(questionText: String) {
         }
     }
 }
+
 
