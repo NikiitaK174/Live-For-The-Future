@@ -10,16 +10,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LifeForTheFuture"
+        android:theme="@style/Theme.LiveForTheFuture"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity2"
+            android:name=".lftf_3"
+            android:exported="false" />
+        <activity
+            android:name="com.lftf_3"
+            android:exported="false" />
+        <activity
+            android:name=".lftf_2"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name"
-            android:theme="@style/Theme.LifeForTheFuture">
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

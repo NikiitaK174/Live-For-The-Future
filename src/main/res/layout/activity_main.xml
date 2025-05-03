@@ -5,118 +5,52 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/pink"
-    tools:context=".MainActivity2">
+    android:background="@color/white"
+    tools:context=".MainActivity">
 
-    <!--white background-->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1000dp"
-        android:background="@drawable/background_rounded"
-        android:layout_marginTop="45dp"
-        android:gravity="center"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-    />
-
-    <!--Title of Page-->
-    <TextView
-        android:id="@+id/topTextPage2"
-        android:layout_width="match_parent"
-
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:paddingTop="60dp"
-        android:text="Welcome [name]"
-        android:textColor="@color/pink"
-        android:textSize="60sp"
+        android:layout_width="406sp"
+        android:layout_marginLeft="15dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="-100dp"
+        android:fontFamily="cursive"
+        android:text="Live For The Future"
+        android:textColor="@color/black"
+        android:textSize="55sp"
         android:textStyle="bold"
-
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.398" />
 
-    <Button
-        android:id="@+id/water_button"
-        android:layout_width="31.5mm"
-        android:layout_height="31.5mm"
-        android:background="@drawable/water_shape"
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-100dp"
+        android:fontFamily="casual"
+        android:text="We Are Here For You"
+        android:textColor="@color/pink"
+        android:textSize="30dp"
         android:textStyle="bold"
-        android:textAllCaps="false"
-        android:text="Log the amount of water you drink."
-        android:textColor="@color/waterText"
-        android:gravity="center_horizontal|bottom"
-        android:paddingBottom="20dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textSize="20sp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="400dp"
-        app:layout_constraintVertical_bias="0.8"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/food_button"
-        android:layout_width="31.5mm"
-        android:layout_height="31.5mm"
-        android:background="@drawable/food_shape"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="400dp"
-        app:layout_constraintVertical_bias="0.8"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.475" />
 
-    <Button
-        android:id="@+id/exercise_button"
-        android:layout_width="31.5mm"
-        android:layout_height="31.5mm"
-        android:background="@drawable/exercise_shape"
+    <ImageView
+        android:layout_width="352dp"
+        android:layout_height="416dp"
+        android:contentDescription="Pregnant woman illustration"
+        android:src="@drawable/live_for_the_future___app_design__1_"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="200dp"
-        app:layout_constraintVertical_bias="0.8"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/feelings_button"
-        android:layout_width="31.5mm"
-        android:layout_height="31.5mm"
-        android:background="@drawable/feelings_shape"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="200dp"
-        app:layout_constraintVertical_bias="0.8"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/AI_help_button"
-        android:layout_width="50mm"
-        android:layout_height="126dp"
-        android:background="@drawable/help_shape"
-        android:gravity="center_horizontal"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="30dp"
-        app:layout_constraint="parent"
-
-        tools:ignore="MissingConstraints" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
